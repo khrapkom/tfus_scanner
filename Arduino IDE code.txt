@@ -1,0 +1,15 @@
+void setup() {
+  // Initialize the serial communication at 9600 bits per second:
+  Serial.begin(115200);
+}
+
+void loop() {
+  // Read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+
+  // Print the value to the Serial Monitor:
+  Serial.println(sensorValue);
+
+  // Wait for 1 second before reading again:
+  delay(100);
+}
