@@ -1,27 +1,17 @@
-const int outputPin = 8;   // The pin on which the square wave will be output
+const int squareWavePin = 8;  // The pin for the square wave output
+const int highOutputPin = 9;  // The pin that will be set HIGH
 const float frequency = 261.63;  // Frequency of the square wave in Hz
 const long periodMicroseconds = 1000000 / frequency; // Calculate the period in microseconds
 
 void setup() {
-  pinMode(outputPin, OUTPUT);  // Set the output pin mode
+  pinMode(squareWavePin, OUTPUT);  // Set the square wave output pin mode
+  pinMode(highOutputPin, OUTPUT);  // Set the HIGH output pin mode
+  digitalWrite(highOutputPin, HIGH);  // Set the HIGH output pin HIGH
 }
 
 void loop() {
-  digitalWrite(outputPin, HIGH);  // Set the pin HIGH
+  digitalWrite(squareWavePin, HIGH);  // Set the square wave pin HIGH
   delayMicroseconds(periodMicroseconds / 2);  // Wait for half the period
-  digitalWrite(outputPin, LOW);   // Set the pin LOW
+  digitalWrite(squareWavePin, LOW);   // Set the square wave pin LOW
   delayMicroseconds(periodMicroseconds / 2);  // Wait for the other half of the period
-}
-
-
-
-const int outputPin = 8;  // The pin that will be set HIGH
-
-void setup() {
-  pinMode(outputPin, OUTPUT);  // Set the output pin mode
-  digitalWrite(outputPin, HIGH);  // Set the pin HIGH
-}
-
-void loop() {
-  // Nothing to do here, the pin is already set HIGH in setup()
 }
